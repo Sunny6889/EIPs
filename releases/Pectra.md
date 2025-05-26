@@ -10,8 +10,8 @@ The following EIPs are confirmed to be part of the Pectra upgrade, as referenced
 - **EIP-2935**: Save historical block hashes in state
 - **EIP-6110**: Supply validator deposits on-chain
 - **EIP-7002**: Execution layer triggerable exits
-- **EIP-7251**: Increase the MAX_EFFECTIVE_BALANCE
-- **EIP-7549**: Move committee index outside Attestation
+- **EIP-7251**: Increase the MAX_EFFECTIVE_BALANCE @Jiao Sunny
+- **EIP-7549**: Move committee index outside Attestation @Jiao Sunny
 - **EIP-7685**: General purpose execution layer requests
 - **EIP-7702**: Set EOA account code
 - **EIP-7742**: Blob count configuration
@@ -74,7 +74,7 @@ These EIPs improve Ethereum’s performance, security, and statelessness by opti
   - **Description**: Stores the last 8,192 block hashes (~27 hours) in a system contract, enabling smart contracts to query historical data and supporting stateless clients.
   - **Impact**: Reduces storage requirements for nodes, lays groundwork for statelessness, and improves reliability for applications needing historical data.
 
-- **EIP-7549**: Move committee index outside Attestation @Jiao Sunny
+- **EIP-7549**: [refer](../EIPS/eip-7549.md) Move committee index outside Attestation @Jiao Sunny
   - **Description**: Removes the committee index from the signature message in the consensus mechanism, allowing more efficient vote aggregation.
   - **Impact**: Lowers network load and verification costs, improving consensus layer efficiency.
 
