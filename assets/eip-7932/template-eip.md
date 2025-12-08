@@ -24,15 +24,16 @@ This EIP defines a new [EIP-7932](../../EIPS/eip-7932.md) algorithmic type with 
 | - | - |
 | `ALG_TYPE` | `Bytes1(0x0)` |
 | `GAS_PENALTY`| `0` |
-| `MAX_SIZE` | `65` |
 
 ```python
-def verify(signature_info: bytes, parent_hash: bytes32) -> bytes20:
-  assert(len(signature_info) == 96)
-  r, s, v = signature_info[0:32], signature_info[32:64], signature_info[64:]
+def verify(signature_info: bytes, parent_hash: Hash32) -> ExecutionAddress:
+  assert(len(signature_info) == 65)
+  r, s, v = signature_info[0:32], signature_info[32:64], signature_info[64]
 
   # This assumes `ecrecover` is identical to the `ecrecover` function in solidity.
   signer = ecrecover(parent_hash, v, r, s)
+
+  assert signer != b""
 
   return signer
 ```
